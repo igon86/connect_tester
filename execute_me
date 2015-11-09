@@ -1,0 +1,3 @@
+quartus_map --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple
+quartus_fit --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple
+quartus_sta connect -c mkNetworkSimple

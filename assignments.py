@@ -4,24 +4,32 @@ import sys
 import os
 import shutil
 
-io_ports = ["EN_recv_ports_{0}_getFlit","EN_recv_ports_{0}_putNonFullVCs","EN_send_ports_{0}_getNonFullVCs","EN_send_ports_{0}_putFlit","recv_ports_{0}_getFlit","recv_ports_{0}_putNonFullVCs_nonFullVCs","recv_ports_info_{0}_getRecvPortID","send_ports_{0}_getNonFullVCs","send_ports_{0}_putFlit_flit_in"]
+in_ports = ["EN_send_ports_{0}_getNonFullVCs","EN_send_ports_{0}_putFlit","send_ports_{0}_getNonFullVCs","send_ports_{0}_putFlit_flit_in"]
+out_ports = ["EN_recv_ports_{0}_getFlit","EN_recv_ports_{0}_putNonFullVCs","recv_ports_{0}_getFlit","recv_ports_{0}_putNonFullVCs_nonFullVCs","recv_ports_info_{0}_getRecvPortID"]
 
 # this is the quartus project file that basically has no meaming
 connect_qpf_path = "./connect.qpf"
+# this is the executable to run for synthesis/placeadnroute/timing
+syn_script = "./execute_me"
 
-if len(sys.argv) != 3:
-    print >> sys.stderr, "Usage: python assignments.py <connect folder> <number of i/o>"
+if len(sys.argv) != 4:
+    print >> sys.stderr, "Usage: python assignments.py <connect folder> <number of inputs> <number of outputs>"
 else:
     # first this guy prepare the qsf with all the juicy stuff for quartus
     with open('connect_base','r') as f, open('mkNetworkSimple.qsf','w') as g:
         assert os.path.isdir(sys.argv[1])
-        num_io = int(sys.argv[2])
+        num_in = int(sys.argv[2])
+        num_out = int(sys.argv[3])
 
         for line in f:
             g.write(line)
 
-        for i in xrange(num_io):
-            for pattern in io_ports:
+        for i in xrange(num_in):
+            for pattern in in_ports:
+                port = pattern.format(i)
+                g.write( "set_instance_assignment -name VIRTUAL_PIN ON -to {0}\n".format(port))
+        for i in xrange(num_out):
+            for pattern in out_ports:
                 port = pattern.format(i)
                 g.write( "set_instance_assignment -name VIRTUAL_PIN ON -to {0}\n".format(port))
 
@@ -36,7 +44,7 @@ else:
 
     #parent_dir = os.pardir(sys.argv[1])
     parent_dir = os.path.abspath(os.path.join(sys.argv[1],os.pardir))
-    print "I am going to copy the generated quartus proj: {0} and \n{1} in \n{2}".format(os.path.abspath("./mkNetworkSimple.qsf"),os.path.abspath(connect_qpf_path),os.path.abspath(parent_dir))
+    print "I am going to copy the generated quartus proj files:\n{0} and \n{1} in \n{2}".format(os.path.abspath("./mkNetworkSimple.qsf"),os.path.abspath(connect_qpf_path),os.path.abspath(parent_dir))
     ok = raw_input("Is that ok? [y/n]")
     if ok == 'y':
         assert os.path.isfile(connect_qpf_path) , "Path parameter for the qpf file is incorrect {0}".format(connect_qpf_path)
@@ -44,4 +52,5 @@ else:
         assert os.path.isdir(parent_dir)
         shutil.copyfile("./mkNetworkSimple.qsf",os.path.join(parent_dir,"./mkNetworkSimple.qsf"))
         shutil.copyfile(connect_qpf_path,os.path.join(parent_dir,"./connect.qpf"))
+        shutil.copyfile(syn_script,os.path.join(parent_dir,"./execute_me"))
         print "Everythinh copied succesfully, you can open the Quartus proj in {0}".format(os.path.abspath(parent_dir))
