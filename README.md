@@ -11,4 +11,5 @@ Set of scripts and infrastructure to easily test a CONNECT (http://users.ece.cmu
     COST 26779.125
     This would correspond to the following invocation: python assignments.py ./test_noc/build 48 66
 4. cd test_noc
-5. /.execute_me
+5. chmod +x ./execute_me
+6. /.execute_me
