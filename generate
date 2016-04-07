@@ -1,0 +1,38 @@
+#!/bin/bash
+
+#0 is crossbar
+#1 is double ring 
+#2 is mesh
+#3 is torus
+noc=3
+
+topology_generator=~/DPU/sql_compiler/noc/topology_generator.py
+comm_stats=~/damon_paper_experiments/global_com.csv
+connect_generator=../connect_gen_network
+
+if ! [ -f $topology_generator ] || ! [ -f $comm_stats ] || ! [ -f $connect_generator ]; then
+	echo "something is missing :("
+	exit
+fi
+
+for i in `seq 0 20 200`; do
+	echo $i
+	python $topology_generator --iter $i --noc $noc $comm_stats  &> topo.log
+	# figure out the folder name
+	if [ $# -eq 1 ]; then
+		# additional argument $1 is used to create differently named folders
+		new_folder="noc${noc}_iter${i}_$1"
+	else
+		new_folder="noc${noc}_iter${i}"
+	fi
+	echo $new_folder
+	mkdir $new_folder
+	mv topo.log $new_folder
+
+	# invoke CONNECT web service
+	$connect_generator -t custom --custom_topology=topology_dump0 --custom_routing=routing_dump0 --flow_control_type=peek --flit_buffer_depth=4 --router_type=iq --flit_data_width=32 &> connect.log
+	if [ $? -eq 0 ]; then
+		mv connect.log $new_folder
+		mv build $new_folder
+	fi
+done

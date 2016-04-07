@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if [ $1 -gt 3 ] || [ $1 -lt 0 ]; then
+	echo "Not supported noc"
+fi
+
+#0 is crossbar
+#1 is double ring 
+#2 is mesh
+#3 is torus
+noc=$1
+
+for i in `seq 0 20 200`; do
+	# figure out the folder name
+	if [ $# -eq 2 ]; then
+		new_folder="noc${noc}_iter${i}_$2"
+	else
+		new_folder="noc${noc}_iter${i}"
+	fi
+	area_file="$new_folder/output_files/mkNetworkSimple.fit.summary"
+	#echo $area_file
+	area=$(awk '{if ($1=="Logic" && $2=="utilization"){ print $6; exit}}' $area_file)
+	#echo $area
+	freq_file="$new_folder/output_files/mkNetworkSimple.sta.rpt"
+	#echo $freq_file
+	freq=$(sed -n '/85C/{n;n;/Fmax/{n;n;p}}' $freq_file | awk '{print $2}')
+	#awk '/85C/ && /Fmax/ {n;n;/Fmax/{print $0}}' $freq_file
+	echo "AREA: $area"
+	echo "FREQ: $freq"
+done

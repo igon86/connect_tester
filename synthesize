@@ -1,0 +1,51 @@
+#!/bin/bash
+
+if [ $# -le 0 ] || [ $# -ge 3 ]; then 
+	echo "illegal number of parameters"
+	echo "arg1: noc type"
+	echo "arg2 (optional): folder_suffix"
+	exit
+fi
+
+noc=$1
+
+for i in `seq 0 20 200`; do
+	# figure out the folder name
+	if [ $# -eq 2 ]; then
+		new_folder="noc${noc}_iter${i}_$2"
+	else
+		new_folder="noc${noc}_iter${i}"
+	fi
+	if ! [ -d $new_folder ]; then
+		echo "$new_folder does not exist"
+		exit
+	fi
+	topo_stat_file="$new_folder/topo.log"
+	if ! [ -f $topo_stat_file ]; then
+		echo "$topo_stat_file does not exist"
+		exit
+	fi
+	# only the first noc is good?
+	outputs=$(awk '{if ($1=="MAX"){if($2=="RecvPORT:"){print $3; exit}}}' $topo_stat_file)
+	inputs=$(awk '{if ($1=="MAX"){if($2=="SendPORT:"){print $3; exit}}}' $topo_stat_file)
+	(( outputs += 1))
+	(( inputs += 1 ))	
+	if [ $inputs -le 1 ] || [ $outputs -le 1 ]; then
+		echo "Too few i/o in $topo_stat_file: $inputs $outputs"
+		continue
+	fi
+	echo "outputs: $outputs"
+	echo "inputs $inputs"
+	connect_log_file="$new_folder/connect.log"
+	if [ -f $connect_log_file ]; then
+		# create the quartus proj
+		python assignments.py $new_folder/build $inputs $outputs
+		cd $new_folder
+		# quartus_map --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple
+		# quartus_fit --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple
+		# quartus_sta connect -c mkNetworkSimple
+		cd -
+	else
+		echo "$connect_log_file is missing"
+	fi
+done
