@@ -1,30 +1,33 @@
 #!/bin/bash
 
-if [ $1 -gt 3 ] || [ $1 -lt 0 ]; then
-	echo "Not supported noc"
+if ! [ -d $1 ]; then
+	echo "arg 1 has to be a directory"
 fi
 
-#0 is crossbar
-#1 is double ring 
-#2 is mesh
-#3 is torus
-noc=$1
+if [ $2 -gt 3 ] || [ $2 -lt 0 ]; then
+	echo "Not supported noc"
+	exit
+else
+	noc=$2
+fi
 
+echo "links, area, freq, area_model"
 for i in `seq 0 20 200`; do
 	# figure out the folder name
-	if [ $# -eq 2 ]; then
-		new_folder="noc${noc}_iter${i}_$2"
+	if [ $# -eq 3 ]; then
+		new_folder="$1/noc${noc}_iter${i}_$3"
 	else
-		new_folder="noc${noc}_iter${i}"
+		new_folder="$1/noc${noc}_iter${i}"
 	fi
 	area_file="$new_folder/output_files/mkNetworkSimple.fit.summary"
 	#echo $area_file
-	area=$(awk '{if ($1=="Logic" && $2=="utilization"){ print $6; exit}}' $area_file)
+	area=$(awk '{if ($1=="Logic" && $2=="utilization"){ print $6; exit}}' $area_file | tr -d ',') # remove commas
 	#echo $area
 	freq_file="$new_folder/output_files/mkNetworkSimple.sta.rpt"
 	#echo $freq_file
-	freq=$(sed -n '/85C/{n;n;/Fmax/{n;n;p}}' $freq_file | awk '{print $2}')
+	freq=$(sed -n '/85C/{n;n;/Fmax/{n;n;p}}' $freq_file | awk '{print $2}' )
+	model_file="$new_folder/topo.log"
+	area_model=$(awk '{if ($1=="COST") {print $2}}' $model_file)
 	#awk '/85C/ && /Fmax/ {n;n;/Fmax/{print $0}}' $freq_file
-	echo "AREA: $area"
-	echo "FREQ: $freq"
+	echo "$i, $area, $freq, $area_model"
 done
