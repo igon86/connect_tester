@@ -53,4 +53,5 @@ else:
         shutil.copyfile("./mkNetworkSimple.qsf",os.path.join(parent_dir,"./mkNetworkSimple.qsf"))
         shutil.copyfile(connect_qpf_path,os.path.join(parent_dir,"./connect.qpf"))
         shutil.copyfile(syn_script,os.path.join(parent_dir,"./execute_me"))
-        print "Everythinh copied succesfully, you can open the Quartus proj in {0}".format(os.path.abspath(parent_dir))
+        os.chmod(os.path.join(parent_dir,"./execute_me"),0744) #make it executable
+        print "Everything copied succesfully, you can open the Quartus proj in {0}".format(os.path.abspath(parent_dir))
