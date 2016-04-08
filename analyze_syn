@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if ! [ -d $1 ]; then
+   echo "$1 is not a directory"
+fi
+
+if ! [ -d $1/output_files ]; then
+   echo "$1 does not contain a output_files directory"
+fi
+
+area_file="$1/output_files/mkNetworkSimple.fit.summary"
+#echo $area_file
+area=$(awk '{if ($1=="Logic" && $2=="utilization"){ print $6; exit}}' $area_file | tr -d ',') # remove commas
+#echo $area
+freq_file="$1/output_files/mkNetworkSimple.sta.rpt"
+#echo $freq_file
+freq=$(sed -n '/85C/{n;n;/Fmax/{n;n;p}}' $freq_file | awk '{print $2}' )
+
+echo "area=$area"
+echo "freq=$freq"
