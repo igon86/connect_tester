@@ -17,8 +17,24 @@ syn_script = "./execute_me"
 if len(sys.argv) != 4:
     print >> sys.stderr, "Usage: python assignments.py <connect folder> <number of inputs> <number of outputs>"
 else:
+    # support files have to be in the same folder as the script
+    base_dir=os.path.dirname(__file__)
+    print base_dir
+
+    connect_qpf_path = os.path.join(base_dir, connect_qpf_path)
+    syn_script = os.path.join(base_dir, syn_script)
+    base_connect_file = os.path.join(base_dir,"connect_base")
+    assert os.path.isfile(connect_qpf_path)
+    assert os.path.isfile(syn_script)
+    
+    parent_dir = os.path.abspath(os.path.join(sys.argv[1],os.pardir))
+    
+    # copy the files that are already good into the 
+    shutil.copyfile(connect_qpf_path, os.path.join(parent_dir,"./connect.qpf"))
+    shutil.copyfile(syn_script, os.path.join(parent_dir,"./execute_me"))
+
     # first this guy prepare the qsf with all the juicy stuff for quartus
-    with open('connect_base','r') as f, open('mkNetworkSimple.qsf','w') as g:
+    with open(base_connect_file,'r') as f, open('mkNetworkSimple.qsf','w') as g:
         assert os.path.isdir(sys.argv[1])
         num_in = int(sys.argv[2])
         num_out = int(sys.argv[3])
@@ -43,16 +59,3 @@ else:
                 elif stuff.endswith('.v'):
                     g.write( "set_global_assignment -name VERILOG_FILE {0}\n".format(os.path.join("build",stuff)) )
 
-
-    #parent_dir = os.pardir(sys.argv[1])
-    parent_dir = os.path.abspath(os.path.join(sys.argv[1],os.pardir))
-    print "I am going to copy the generated quartus proj files:\n{0} and \n{1} in \n{2}".format(os.path.abspath("./mkNetworkSimple.qsf"),os.path.abspath(connect_qpf_path),os.path.abspath(parent_dir))
-    ok = raw_input("Is that ok? [y/n]")
-    if ok == 'y':
-        assert os.path.isfile(connect_qpf_path) , "Path parameter for the qpf file is incorrect {0}".format(connect_qpf_path)
-        assert os.path.isfile("./mkNetworkSimple.qsf") 
-        assert os.path.isdir(parent_dir)
-        shutil.copyfile("./mkNetworkSimple.qsf",os.path.join(parent_dir,"./mkNetworkSimple.qsf"))
-        shutil.copyfile(connect_qpf_path,os.path.join(parent_dir,"./connect.qpf"))
-        shutil.copyfile(syn_script,os.path.join(parent_dir,"./execute_me"))
-        print "Everythinh copied succesfully, you can open the Quartus proj in {0}".format(os.path.abspath(parent_dir))
