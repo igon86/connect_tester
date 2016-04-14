@@ -1,0 +1,61 @@
+#!/bin/bash
+# This script will, for a given specialization level, communication stats, and noc fallback:
+# generate the noc 
+# generate the noc rtl via connect
+# synthesize the noc
+
+#stop at the first error
+set -e
+
+# check all necessary env variables
+if [ ${#DPU_CODE_FOLDER} -eq 0 ] || [ ! -d "$DPU_CODE_FOLDER/noc" ]; then
+	1>&2 echo "DPU_CODE_FOLDER does not point to a valid directory - please fix" 
+	exit 1
+fi
+
+# this is the executable from Michael to query the CONNECT web service
+if [ ${#CONNECT_GENERATOR} -eq 0 ] || [ ! -f $CONNECT_GENERATOR ]; then
+	1>&2 echo "CONNECT_GENERATOR does not point to a valid file: $CONNECT_GENERATOR - please fix" 
+	exit 1
+fi
+
+# this is the python script to create a quartus proj out of the CONNECT output
+if [ ${#ASSIGNMENT_GENERATOR} -eq 0 ] || [ ! -f $ASSIGNMENT_GENERATOR ]; then
+	1>&2 echo "ASSIGNMENT_GENERATOR does not point to a valid file: $ASSIGNMENT_GENERATOR - please fix" 
+	exit 1
+fi
+
+if [ $# -ne 3 ]; then
+   echo "Usage: $0 <spec_level> <fallback_noc> <comm_stats_file>"
+   exit 1
+fi
+
+echo "Running my noc synthesis"
+python $DPU_CODE_FOLDER/noc/topology_generator.py --iter $1 --noc $2 $3  &> topo.log
+
+echo "Running CONNECT"
+$CONNECT_GENERATOR -t custom --custom_topology=topology_dump0 --custom_routing=routing_dump0 --flow_control_type=peek --flit_buffer_depth=4 --router_type=iq --flit_data_width=32 
+
+# only the first noc is good?
+outputs=$(awk '{if ($1=="MAX"){if($2=="RecvPORT:"){print $3; exit}}}' topo.log)
+inputs=$(awk '{if ($1=="MAX"){if($2=="SendPORT:"){print $3; exit}}}' topo.log)
+(( outputs += 1))
+(( inputs += 1 ))	
+if [ $inputs -le 1 ] || [ $outputs -le 1 ]; then
+	echo "Too few i/o in $(pwd)/topo.log: $inputs $outputs"
+	continue
+fi
+echo "outputs: $outputs"
+echo "inputs $inputs"
+
+# create the quartus proj
+python $ASSIGNMENT_GENERATOR build $inputs $outputs
+
+#synthesize
+echo "Running synthesis"
+quartus_map --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple > map.log
+echo "Running fit"
+quartus_fit --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple > fit.log
+echo "Running timing analyzer"
+quartus_sta connect -c mkNetworkSimple > time.log
+

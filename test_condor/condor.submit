@@ -1,0 +1,67 @@
+executable = ../script
+universe = vanilla    
+output = main.out
+error = main.err
+log = main.log
+getenv = True   
+
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc0_iter0
+arguments = 0 0 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc0_iter40
+arguments = 40 0 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc0_iter80
+arguments = 80 0 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc0_iter120
+arguments = 120 0 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc0_iter160
+arguments = 160 0 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc1_iter0
+arguments = 0 1 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc1_iter40
+arguments = 40 1 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc1_iter80
+arguments = 80 1 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc1_iter120
+arguments = 120 1 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc1_iter160
+arguments = 160 1 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc2_iter0
+arguments = 0 2 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc2_iter40
+arguments = 40 2 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc2_iter80
+arguments = 80 2 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc2_iter120
+arguments = 120 2 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc2_iter160
+arguments = 160 2 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc3_iter0
+arguments = 0 3 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc3_iter40
+arguments = 40 3 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc3_iter80
+arguments = 80 3 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc3_iter120
+arguments = 120 3 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
+initial_dir = /proj/arcade/home/lottarini/connect_tester/test_condor/noc3_iter160
+arguments = 160 3 /proj/arcade/home/lottarini/DPU/sql_compiler/global_com.csv
+queue
