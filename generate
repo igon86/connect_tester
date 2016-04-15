@@ -29,7 +29,7 @@ fi
 for i in `seq 0 20 200`; do
 
 	new_folder="noc${1}_iter${i}"
-	echo $new_folder
+	echo -n "$new_folder...    "
 	mkdir -p $new_folder
 
 	python $DPU_CODE_FOLDER/noc/topology_generator.py --iter $i --noc $1 --placement $3 $2  &> topo.log
@@ -38,14 +38,20 @@ for i in `seq 0 20 200`; do
 		cp routing_dump0 ./$new_folder
 	else
 		echo "failed topology generation"
+		# in any case save the log
+		mv topo.log $new_folder
+		continue
 	fi
 	# in any case save the log
 	mv topo.log $new_folder
 
 	# invoke CONNECT web service
-	$CONNECT_GENERATOR -t custom --custom_topology=topology_dump0 --custom_routing=routing_dump0 --flow_control_type=peek --flit_buffer_depth=4 --router_type=iq --flit_data_width=32 &> connect.log
+	$CONNECT_GENERATOR -t custom --custom_topology=topology_dump0 --custom_routing=routing_dump0 --flow_control_type=peek --flit_buffer_depth=4 --router_type=iq --flit_data_width=32 --verbose --compress_custom &> connect.log
 	if [ $? -eq 0 ]; then
 		mv build $new_folder
+		echo "success"
+	else
+		echo "failed CONNECT"
 	fi
 	# save the log
 	mv connect.log $new_folder
