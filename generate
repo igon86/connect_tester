@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #stop at the first error
-set -e
+#set -e
 
 # check all necessary env variables
 if [ ${#DPU_CODE_FOLDER} -eq 0 ] || [ ! -d "$DPU_CODE_FOLDER/noc" ]; then
@@ -27,24 +27,28 @@ if ! [ -f $DPU_CODE_FOLDER/noc/topology_generator.py ] || ! [ -f $2 ] || ! [ -f 
 fi
 
 for i in `seq 0 20 200`; do
-	echo $i
-	python $DPU_CODE_FOLDER/noc/topology_generator.py --iter $i --noc $1 --placement $3 $2  &> topo.log
-	# figure out the folder name
-	# if [ $# -eq 1 ]; then
-	# 	# additional argument $1 is used to create differently named folders
-	# 	new_folder="noc${noc}_iter${i}_$1"
-	# else
-	# 	new_folder="noc${noc}_iter${i}"
-	# fi
+
 	new_folder="noc${1}_iter${i}"
 	echo $new_folder
 	mkdir -p $new_folder
+
+	python $DPU_CODE_FOLDER/noc/topology_generator.py --iter $i --noc $1 --placement $3 $2  &> topo.log
+	if [ $? -eq 0 ]; then
+		cp topology_dump0 ./$new_folder
+		cp routing_dump0 ./$new_folder
+	else
+		echo "failed topology generation"
+	fi
+	# in any case save the log
 	mv topo.log $new_folder
 
 	# invoke CONNECT web service
 	$CONNECT_GENERATOR -t custom --custom_topology=topology_dump0 --custom_routing=routing_dump0 --flow_control_type=peek --flit_buffer_depth=4 --router_type=iq --flit_data_width=32 &> connect.log
 	if [ $? -eq 0 ]; then
-		mv connect.log $new_folder
 		mv build $new_folder
 	fi
+	# save the log
+	mv connect.log $new_folder
 done
+
+rm -f *.dot
