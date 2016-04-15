@@ -1,0 +1,677 @@
+set_global_assignment -name FAMILY "Stratix V"
+set_global_assignment -name DEVICE 5SGXEA7N1F45C1
+set_global_assignment -name TOP_LEVEL_ENTITY mkNetworkSimple
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:19:11  FEBRUARY 16, 2015"
+set_global_assignment -name LAST_QUARTUS_VERSION 14.1.0
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SDC_FILE ../200MHz_constrain.sdc	 
+set_instance_assignment -name VIRTUAL_PIN ON -to RST_N
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_0_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_0_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_0_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_0_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_1_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_1_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_1_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_1_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_2_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_2_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_2_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_2_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_3_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_3_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_3_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_3_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_4_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_4_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_4_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_4_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_5_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_5_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_5_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_5_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_6_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_6_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_6_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_6_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_7_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_7_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_7_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_7_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_8_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_8_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_8_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_8_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_9_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_9_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_9_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_9_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_10_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_10_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_10_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_10_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_11_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_11_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_11_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_11_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_12_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_12_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_12_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_12_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_13_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_13_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_13_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_13_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_14_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_14_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_14_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_14_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_15_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_15_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_15_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_15_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_16_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_16_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_16_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_16_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_17_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_17_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_17_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_17_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_18_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_18_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_18_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_18_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_19_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_19_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_19_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_19_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_20_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_20_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_20_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_20_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_21_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_21_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_21_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_21_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_22_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_22_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_22_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_22_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_23_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_23_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_23_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_23_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_24_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_24_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_24_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_24_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_25_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_25_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_25_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_25_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_26_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_26_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_26_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_26_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_27_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_27_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_27_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_27_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_28_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_28_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_28_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_28_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_29_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_29_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_29_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_29_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_30_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_30_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_30_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_30_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_31_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_31_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_31_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_31_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_32_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_32_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_32_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_32_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_33_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_33_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_33_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_33_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_34_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_34_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_34_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_34_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_35_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_35_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_35_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_35_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_36_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_36_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_36_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_36_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_37_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_37_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_37_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_37_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_38_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_38_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_38_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_38_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_39_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_39_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_39_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_39_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_40_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_40_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_40_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_40_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_41_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_41_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_41_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_41_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_42_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_42_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_42_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_42_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_43_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_43_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_43_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_43_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_44_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_44_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_44_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_44_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_45_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_45_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_45_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_45_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_46_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_46_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_46_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_46_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_47_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_47_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_47_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_47_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_48_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_48_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_48_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_48_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_49_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_49_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_49_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_49_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_50_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_50_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_50_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_50_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_51_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_51_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_51_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_51_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_52_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_52_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_52_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_52_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_53_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_53_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_53_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_53_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_54_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_54_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_54_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_54_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_55_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_55_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_55_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_55_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_56_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_56_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_56_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_56_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_57_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_57_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_57_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_57_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_58_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_58_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_58_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_58_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_59_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_59_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_59_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_59_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_60_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_60_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_60_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_60_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_61_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_61_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_61_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_61_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_62_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_62_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_62_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_62_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_63_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_send_ports_63_putFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_63_getNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to send_ports_63_putFlit_flit_in
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_0_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_0_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_0_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_0_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_0_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_1_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_1_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_1_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_1_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_1_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_2_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_2_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_2_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_2_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_2_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_3_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_3_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_3_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_3_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_3_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_4_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_4_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_4_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_4_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_4_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_5_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_5_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_5_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_5_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_5_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_6_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_6_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_6_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_6_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_6_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_7_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_7_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_7_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_7_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_7_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_8_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_8_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_8_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_8_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_8_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_9_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_9_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_9_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_9_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_9_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_10_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_10_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_10_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_10_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_10_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_11_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_11_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_11_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_11_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_11_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_12_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_12_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_12_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_12_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_12_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_13_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_13_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_13_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_13_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_13_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_14_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_14_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_14_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_14_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_14_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_15_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_15_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_15_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_15_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_15_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_16_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_16_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_16_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_16_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_16_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_17_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_17_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_17_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_17_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_17_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_18_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_18_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_18_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_18_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_18_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_19_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_19_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_19_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_19_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_19_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_20_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_20_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_20_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_20_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_20_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_21_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_21_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_21_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_21_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_21_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_22_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_22_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_22_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_22_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_22_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_23_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_23_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_23_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_23_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_23_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_24_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_24_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_24_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_24_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_24_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_25_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_25_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_25_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_25_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_25_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_26_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_26_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_26_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_26_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_26_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_27_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_27_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_27_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_27_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_27_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_28_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_28_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_28_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_28_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_28_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_29_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_29_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_29_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_29_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_29_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_30_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_30_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_30_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_30_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_30_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_31_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_31_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_31_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_31_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_31_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_32_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_32_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_32_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_32_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_32_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_33_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_33_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_33_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_33_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_33_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_34_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_34_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_34_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_34_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_34_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_35_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_35_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_35_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_35_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_35_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_36_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_36_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_36_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_36_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_36_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_37_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_37_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_37_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_37_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_37_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_38_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_38_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_38_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_38_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_38_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_39_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_39_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_39_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_39_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_39_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_40_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_40_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_40_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_40_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_40_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_41_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_41_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_41_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_41_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_41_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_42_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_42_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_42_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_42_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_42_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_43_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_43_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_43_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_43_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_43_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_44_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_44_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_44_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_44_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_44_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_45_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_45_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_45_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_45_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_45_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_46_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_46_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_46_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_46_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_46_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_47_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_47_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_47_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_47_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_47_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_48_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_48_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_48_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_48_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_48_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_49_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_49_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_49_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_49_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_49_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_50_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_50_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_50_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_50_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_50_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_51_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_51_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_51_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_51_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_51_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_52_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_52_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_52_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_52_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_52_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_53_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_53_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_53_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_53_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_53_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_54_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_54_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_54_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_54_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_54_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_55_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_55_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_55_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_55_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_55_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_56_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_56_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_56_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_56_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_56_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_57_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_57_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_57_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_57_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_57_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_58_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_58_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_58_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_58_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_58_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_59_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_59_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_59_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_59_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_59_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_60_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_60_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_60_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_60_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_60_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_61_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_61_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_61_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_61_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_61_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_62_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_62_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_62_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_62_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_62_getRecvPortID
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_63_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to EN_recv_ports_63_putNonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_63_getFlit
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_63_putNonFullVCs_nonFullVCs
+set_instance_assignment -name VIRTUAL_PIN ON -to recv_ports_info_63_getRecvPortID
+set_global_assignment -name VERILOG_FILE build/connect_parameters.v
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_0.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_10.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_11.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_12.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_13.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_14.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_15.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_16.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_17.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_18.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_19.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_1.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_20.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_21.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_22.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_23.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_24.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_25.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_26.hex
+set_global_assignment -name VERILOG_FILE build/mkInputArbiter.v
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_27.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_28.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_29.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_2.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_30.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_31.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_32.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_33.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_34.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_35.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_36.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_37.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_38.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_39.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_3.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_40.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_41.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_42.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_43.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_44.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_45.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_46.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_47.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_48.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_49.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_4.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_50.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_51.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_52.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_53.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_54.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_55.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_56.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_57.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_58.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_59.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_5.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_60.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_61.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_62.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_63.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_6.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_7.hex
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_8.hex
+set_global_assignment -name VERILOG_FILE build/mkInputQueue.v
+set_global_assignment -name VERILOG_FILE build/mkIQRouterCoreSimple.v
+set_global_assignment -name HEX_FILE build/mesh_64RTs_2VCs_4BD_32DW_SepIFRoundRobinAlloc_8RTsPerRow_8RTsPerCol_routing_9.hex
+set_global_assignment -name VERILOG_FILE build/mkNetworkSimple.v
+set_global_assignment -name VERILOG_FILE build/mkOutPortFIFO.v
+set_global_assignment -name VERILOG_FILE build/mkOutputArbiter.v
+set_global_assignment -name VERILOG_FILE build/mkRouterInputArbitersRoundRobin.v
+set_global_assignment -name VERILOG_FILE build/mkRouterInputArbitersStatic.v
+set_global_assignment -name VERILOG_FILE build/mkRouterOutputArbitersRoundRobin.v
+set_global_assignment -name VERILOG_FILE build/mkRouterOutputArbitersStatic.v
+set_global_assignment -name VERILOG_FILE build/mkSepRouterAllocator.v
+set_global_assignment -name VERILOG_FILE build/module_gen_grant_carry.v
+set_global_assignment -name VERILOG_FILE build/module_outport_encoder.v
+set_global_assignment -name VERILOG_FILE build/RegFile_1port.v
+set_global_assignment -name VERILOG_FILE build/RegFileLoadSyn.v
+set_global_assignment -name VERILOG_FILE build/testbench_sample_peek.v

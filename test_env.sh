@@ -13,6 +13,6 @@ fi
 
 # this is the python script to create a quartus proj out of the CONNECT output
 if [ ${#ASSIGNMENT_GENERATOR} -eq 0 ] || [ ! -f $ASSIGNMENT_GENERATOR ]; then
-	1>&2 echo "CONNECT_GENERATOR does not point to a valid file - please fix" 
+	1>&2 echo "ASSIGNMENT GENERATOR does not point to a valid file - please fix" 
 	exit 1
 fi

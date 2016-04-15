@@ -1,36 +1,48 @@
 #!/bin/bash
 
-#0 is crossbar
-#1 is double ring 
-#2 is mesh
-#3 is torus
-noc=3
+#stop at the first error
+set -e
 
-topology_generator=~/DPU/sql_compiler/noc/topology_generator.py
-comm_stats=~/damon_paper_experiments/global_com.csv
-connect_generator=../connect_gen_network
+# check all necessary env variables
+if [ ${#DPU_CODE_FOLDER} -eq 0 ] || [ ! -d "$DPU_CODE_FOLDER/noc" ]; then
+	1>&2 echo "DPU_CODE_FOLDER does not point to a valid directory - please fix" 
+	exit 1
+fi
 
-if ! [ -f $topology_generator ] || ! [ -f $comm_stats ] || ! [ -f $connect_generator ]; then
+# this is the executable from Michael to query the CONNECT web service
+if [ ${#CONNECT_GENERATOR} -eq 0 ] || [ ! -f $CONNECT_GENERATOR ]; then
+	1>&2 echo "CONNECT_GENERATOR does not point to a valid file: $CONNECT_GENERATOR - please fix" 
+	exit 1
+fi
+
+if [ $# -ne 3 ]; then
+	# placement file is the link between simulation and synthesis
+	echo "Usage: $0 <fallback_noc> <comm_stats_file> <placement_file>"
+	exit 1
+fi
+
+if ! [ -f $DPU_CODE_FOLDER/noc/topology_generator.py ] || ! [ -f $2 ] || ! [ -f $3 ]; then
 	echo "something is missing :("
 	exit
 fi
 
 for i in `seq 0 20 200`; do
 	echo $i
-	python $topology_generator --iter $i --noc $noc $comm_stats  &> topo.log
+	python $DPU_CODE_FOLDER/noc/topology_generator.py --iter $i --noc $1 --placement $3 $2  &> topo.log
 	# figure out the folder name
-	if [ $# -eq 1 ]; then
-		# additional argument $1 is used to create differently named folders
-		new_folder="noc${noc}_iter${i}_$1"
-	else
-		new_folder="noc${noc}_iter${i}"
-	fi
+	# if [ $# -eq 1 ]; then
+	# 	# additional argument $1 is used to create differently named folders
+	# 	new_folder="noc${noc}_iter${i}_$1"
+	# else
+	# 	new_folder="noc${noc}_iter${i}"
+	# fi
+	new_folder="noc${1}_iter${i}"
 	echo $new_folder
-	mkdir $new_folder
+	mkdir -p $new_folder
 	mv topo.log $new_folder
 
 	# invoke CONNECT web service
-	$connect_generator -t custom --custom_topology=topology_dump0 --custom_routing=routing_dump0 --flow_control_type=peek --flit_buffer_depth=4 --router_type=iq --flit_data_width=32 &> connect.log
+	$CONNECT_GENERATOR -t custom --custom_topology=topology_dump0 --custom_routing=routing_dump0 --flow_control_type=peek --flit_buffer_depth=4 --router_type=iq --flit_data_width=32 &> connect.log
 	if [ $? -eq 0 ]; then
 		mv connect.log $new_folder
 		mv build $new_folder

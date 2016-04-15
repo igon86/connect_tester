@@ -13,3 +13,7 @@ Set of scripts and infrastructure to easily test a CONNECT (http://users.ece.cmu
 4. cd test_noc
 5. chmod +x ./execute_me
 6. /.execute_me
+
+script does not work because of CONNECT but it is the sequence of operations to be performed in order to generate a noc and synthesize it (was meant to run on condor)
+
+generate is the script that sequentially queries connect for a given noc for increasing specialization
