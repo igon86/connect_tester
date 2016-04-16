@@ -1,0 +1,26 @@
+#!/bin/bash
+# this should be run on Condor
+if [ -f topo.log ] && [ -d build ]; then
+
+	outputs=$(awk '{if ($1=="MAX"){if($2=="RecvPORT:"){print $3; exit}}}' topo.log)
+	inputs=$(awk '{if ($1=="MAX"){if($2=="SendPORT:"){print $3; exit}}}' topo.log)
+	(( outputs += 1))
+	(( inputs += 1 ))	
+	if [ $inputs -le 1 ] || [ $outputs -le 1 ]; then
+		echo "Too few i/o in $(pwd)/topo.log: $inputs $outputs"
+		continue
+	fi
+	echo "outputs: $outputs"
+	echo "inputs $inputs"
+
+	# create the quartus proj
+	python $ASSIGNMENT_GENERATOR build $inputs $outputs
+
+	#synthesize
+	# echo "Running synthesis"
+	# quartus_map --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple > map.log
+	# echo "Running fit"
+	# quartus_fit --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple > fit.log
+	# echo "Running timing analyzer"
+	# quartus_sta connect -c mkNetworkSimple > time.log
+fi
