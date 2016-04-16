@@ -1,7 +1,8 @@
 #!/bin/bash
 # turn on all pipelining options
+echo "CONNECT DOES NOT USE ITS OWN INCLUDE FILES - DO NOT USE THIS - IT HAS NOT EFFECT"
+exit 1
 files=$(find . -name connect_parameters.v)
-
 for f in $files; do
 	echo $f
 	cp $f $f.bak
