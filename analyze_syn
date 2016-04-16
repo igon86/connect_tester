@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# this script analyze a single synthesis directory and greps
+# area anf frequency numbers
 if ! [ -d $1 ]; then
    echo "$1 is not a directory"
 fi

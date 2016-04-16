@@ -1,0 +1,39 @@
+executable = /proj/arcade/home/lottarini/connect_tester/synthesize_condor
+universe = vanilla
+output = main.out                                                                                                   
+error = main.err
+log = main.log
+Requirements = (Machine != "mint.cs.columbia.edu")
+getenv = True   
+
+##### REPLACE STUFF STARTING FROM HERE ###########
+initial_dir = noc5_iter0
+queue
+initial_dir = noc5_iter20
+queue
+initial_dir = noc5_iter40
+
+queue
+initial_dir = noc5_iter60
+
+queue
+initial_dir = noc5_iter80
+
+queue
+initial_dir = noc5_iter100
+
+queue
+initial_dir = noc5_iter120
+
+queue
+initial_dir = noc5_iter140
+
+queue
+initial_dir = noc5_iter160
+
+queue
+initial_dir = noc5_iter180
+
+queue
+initial_dir = noc5_iter200
+queue

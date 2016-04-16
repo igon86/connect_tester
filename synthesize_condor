@@ -1,6 +1,6 @@
 #!/bin/bash
 # this should be run on Condor
-if [ -f topo.log ] && [ -d build ]; then
+if [ -f topo.log ] && [ -d build ] && [ ${#ASSIGNMENT_GENERATOR} -gt 0 ] &&  [ -f $ASSIGNMENT_GENERATOR ]; then
 
 	outputs=$(awk '{if ($1=="MAX"){if($2=="RecvPORT:"){print $3; exit}}}' topo.log)
 	inputs=$(awk '{if ($1=="MAX"){if($2=="SendPORT:"){print $3; exit}}}' topo.log)
@@ -16,11 +16,13 @@ if [ -f topo.log ] && [ -d build ]; then
 	# create the quartus proj
 	python $ASSIGNMENT_GENERATOR build $inputs $outputs
 
-	#synthesize
-	# echo "Running synthesis"
-	# quartus_map --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple > map.log
-	# echo "Running fit"
-	# quartus_fit --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple > fit.log
-	# echo "Running timing analyzer"
-	# quartus_sta connect -c mkNetworkSimple > time.log
+	synthesize
+	echo "Running synthesis"
+	quartus_map --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple > map.log
+	echo "Running fit"
+	quartus_fit --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple > fit.log
+	echo "Running timing analyzer"
+	quartus_sta connect -c mkNetworkSimple > time.log
+else
+	echo "Nothing to do here!"
 fi
