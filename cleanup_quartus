@@ -1,0 +1,5 @@
+#!/bin/bash
+# this will save a lot of space
+# I am being catious with the rm -rf 
+find . -name db -exec echo rm -rf \{\} \;
+find . -name incremental_db -exec echo rm -rf \{\} \;

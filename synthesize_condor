@@ -16,7 +16,6 @@ if [ -f topo.log ] && [ -d build ] && [ ${#ASSIGNMENT_GENERATOR} -gt 0 ] &&  [ -
 	# create the quartus proj
 	python $ASSIGNMENT_GENERATOR build $inputs $outputs
 
-	synthesize
 	echo "Running synthesis"
 	quartus_map --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple > map.log
 	echo "Running fit"

@@ -1,0 +1,10 @@
+#!/bin/bash
+# turn on all pipelining options
+files=$(find . -name connect_parameters.v)
+
+for f in $files; do
+	echo $f
+	cp $f $f.bak
+	awk '/PIPELINE/{print $1, $2, "True";next}{print $0}' $f > $f.tmp
+	mv $f.tmp $f
+done
