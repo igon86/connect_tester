@@ -16,7 +16,7 @@ else
 	noc=$2
 fi
 
-echo "links, area, freq, area_model"
+echo "#links, area, freq, area_model"
 for i in `seq 0 20 200`; do
 	# the folder name might have a suffix
 	if [ $# -eq 3 ]; then
