@@ -1,0 +1,44 @@
+#!/bin/bash
+
+#stop at the first error
+#set -e
+
+# this is the executable from Michael to query the CONNECT web service
+if [ ${#CONNECT_GENERATOR} -eq 0 ] || [ ! -f $CONNECT_GENERATOR ]; then
+	1>&2 echo "CONNECT_GENERATOR does not point to a valid file: $CONNECT_GENERATOR - please fix" 
+	exit 1
+fi
+
+if [ $# -ne 2 ]; then
+	# placement file is the link between simulation and synthesis
+	echo "Usage: $0 <ogras_nocs_folder> <max_spec>"
+	exit 1
+fi
+
+if [ ! -d $1 ] || [ $2 -le 0 ]; then
+	echo "review the arguments"
+fi
+
+for i in `seq 0 $2`; do
+	echo -n "$i..."
+	if [ ! -f $1/noc$i.topo0 ] || [ ! -f $1/noc$i.route0 ]; then
+		echo "$1/noc$i.topo0 OR $1/noc$1.route0 missing"
+		continue
+	fi
+	new_folder="$1/noc$i"
+	mkdir $new_folder
+
+	# invoke CONNECT web service
+	$CONNECT_GENERATOR -t custom --custom_topology=$1/noc$i.topo0 --custom_routing=$1/noc$i.route0 --flow_control_type=peek --flit_buffer_depth=4 --router_type=iq --flit_data_width=32 --verbose --compress_custom &> connect.log
+	if [ $? -eq 0 ]; then
+		mv build $new_folder
+		echo "success"
+	else
+		echo "failed CONNECT"
+	fi
+
+	# save the log
+	mv connect.log $new_folder
+done
+
+rm -f *.dot

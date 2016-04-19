@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+	echo "usage: ./analyze_ogras <folder containing nocs> "
+	exit 1
+fi
+
+if ! [ -d $1 ]; then
+	echo "arg 1 has to be a directory"
+fi
+
+echo "#links, area, freq, area_model"
+for i in $(ls $1); do
+	if [ -d $1/$i ]; then
+
+		noc_id=${i:3}
+
+		#echo "$1/$i is a folder"
+ 	    # ugly but whatever
+		source ./analyze_syn $1/$i > /dev/null
+		echo "$noc_id, $area, $freq"
+	fi
+done

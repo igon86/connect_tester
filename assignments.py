@@ -38,7 +38,7 @@ else:
     os.chmod(os.path.join(parent_dir,"./execute_me"),0744) #make it executable
 
     # finally prepare the script for quartus
-    with open(base_connect_file,'r') as f, open('mkNetworkSimple.qsf','w') as g:
+    with open(base_connect_file,'r') as f, open(os.path.join(parent_dir,'mkNetworkSimple.qsf'),'w') as g:
         assert os.path.isdir(sys.argv[1])
         num_in = int(sys.argv[2])
         num_out = int(sys.argv[3])

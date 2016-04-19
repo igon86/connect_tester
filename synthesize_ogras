@@ -1,0 +1,23 @@
+#!/bin/bash
+# this should be run on Condor
+if [ -d build ] && [ -f ./build/mkNetworkSimple.v ] &&  [ ${#ASSIGNMENT_GENERATOR} -gt 0 ] &&  [ -f $ASSIGNMENT_GENERATOR ]; then
+	max=$(awk 'BEGIN{FS="_";max=0} $3 ~ /^[0-9]+$/ {if($3>max){max=$3}}END{print max}' ./build/mkNetworkSimple.v )
+	(( max += 1))
+	if [ $max -le 1 ]; then
+		echo "Too few i/o in ./build/mkNetworkSimple.v: $max"
+		continue
+	fi
+	echo "i/o: $max"
+
+	# create the quartus proj
+	python $ASSIGNMENT_GENERATOR ./build $max $max
+
+	echo "Running synthesis"
+	quartus_map --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple > map.log
+	echo "Running fit"
+	quartus_fit --read_settings_files=on --write_settings_files=off connect -c mkNetworkSimple > fit.log
+	echo "Running timing analyzer"
+	quartus_sta connect -c mkNetworkSimple > time.log
+else
+	echo "Nothing to do here!"
+fi
