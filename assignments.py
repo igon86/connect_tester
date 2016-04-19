@@ -5,6 +5,7 @@
 import sys
 import os
 import shutil
+import re
 
 in_ports = ["EN_send_ports_{0}_getNonFullVCs","EN_send_ports_{0}_putFlit","send_ports_{0}_getNonFullVCs","send_ports_{0}_putFlit_flit_in"]
 out_ports = ["EN_recv_ports_{0}_getFlit","EN_recv_ports_{0}_putNonFullVCs","recv_ports_{0}_getFlit","recv_ports_{0}_putNonFullVCs_nonFullVCs","recv_ports_info_{0}_getRecvPortID"]
@@ -14,21 +15,21 @@ connect_qpf_path = "./connect.qpf"
 # this is the executable to run for synthesis/placeadnroute/timing
 syn_script = "./execute_me"
 
-if len(sys.argv) != 4:
-    print >> sys.stderr, "Usage: python assignments.py <connect folder> <number of inputs> <number of outputs>"
+if len(sys.argv) != 2:
+    print >> sys.stderr, "Usage: python assignments.py <connect folder>"
 else:
     # support files have to be in the same folder as the script
     base_dir=os.path.dirname(__file__)
     print base_dir
 
-    connect_qpf_path = os.path.join(base_dir, connect_qpf_path)
-    syn_script = os.path.join(base_dir, syn_script)
+    connect_qpf_path  = os.path.join(base_dir, connect_qpf_path)
+    syn_script        = os.path.join(base_dir, syn_script)
     base_connect_file = os.path.join(base_dir,"connect_base")
     assert os.path.isfile(connect_qpf_path)
     assert os.path.isfile(syn_script)
     assert os.path.isdir(sys.argv[1])
     top = os.path.join(sys.argv[1],"mkNetworkSimple.v")
-    assert os.path.isfile(top)
+    assert os.path.isfile(top) , "{0} is not a file".format(top)
 
     parent_dir = os.path.abspath(os.path.join(sys.argv[1],os.pardir))
     
@@ -37,12 +38,23 @@ else:
     shutil.copyfile(syn_script, os.path.join(parent_dir,"./execute_me"))
     os.chmod(os.path.join(parent_dir,"./execute_me"),0744) #make it executable
 
+    # figure out the number of inputs and outputs
+    num_in = 0
+    num_out = 0
+    with open(top) as f:
+        for line in f:
+            m = re.search("send_ports_([0-9]+)", line)
+            if m and int(m.group(1)) > num_in:
+                num_in = int(m.group(1))
+            m = re.search("recv_ports_([0-9]+)", line)
+            if m and int(m.group(1)) > num_out:
+                num_out = int(m.group(1))
+    num_in  +=1
+    num_out +=1               
+    
     # finally prepare the script for quartus
     with open(base_connect_file,'r') as f, open(os.path.join(parent_dir,'mkNetworkSimple.qsf'),'w') as g:
-        assert os.path.isdir(sys.argv[1])
-        num_in = int(sys.argv[2])
-        num_out = int(sys.argv[3])
-        print "Network to process has {0} inputs and {1} outputs".format(num_in, num_out)
+        print "Network to process has {0} inputs (send_ports) and {1} outputs (recv_ports)".format(num_in, num_out)
         for line in f:
             g.write(line)
 
