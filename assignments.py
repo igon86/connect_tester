@@ -26,7 +26,10 @@ else:
     base_connect_file = os.path.join(base_dir,"connect_base")
     assert os.path.isfile(connect_qpf_path)
     assert os.path.isfile(syn_script)
-    
+    assert os.path.isdir(sys.argv[1])
+    top = os.path.join(sys.argv[1],"mkNetworkSimple.v")
+    assert os.path.isfile(top)
+
     parent_dir = os.path.abspath(os.path.join(sys.argv[1],os.pardir))
     
     # copy the files that are already good into the target directory
