@@ -1,6 +1,11 @@
 #!/bin/bash
 # this script analyze a single synthesis directory and greps
 # area anf frequency numbers
+if [ $# -ne 1 ]; then
+	echo "usage: $0 <synthesis folder>"
+	exit 
+fi
+
 if ! [ -d $1 ]; then
    echo "$1 is not a directory"
 fi
