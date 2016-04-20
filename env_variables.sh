@@ -17,7 +17,7 @@ fi
 export ASSIGNMENT_GENERATOR=/proj/arcade/home/lottarini/connect_tester/assignments.py
 
 if [ ${#ASSIGNMENT_GENERATOR} -eq 0 ] || [ ! -f $ASSIGNMENT_GENERATOR ]; then
-	1>&2 echo "CONNECT GENERATOR does not point to a valid file - please fix" 
+	1>&2 echo "ASSIGNMENT GENERATOR does not point to a valid file - please fix" 
 fi
 
 
