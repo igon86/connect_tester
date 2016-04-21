@@ -9,9 +9,9 @@ if [ ${#CONNECT_GENERATOR} -eq 0 ] || [ ! -f $CONNECT_GENERATOR ]; then
 	exit 1
 fi
 
-if [ $# -ne 2 ]; then
+if [ $# -ne 1 ]; then
 	# placement file is the link between simulation and synthesis
-	echo "Usage: $0 <ogras_nocs_folder> <max_spec>"
+	echo "Usage: $0 <ogras_nocs_folder>"
 	exit 1
 fi
 
@@ -19,7 +19,7 @@ if [ ! -d $1 ] || [ $2 -le 0 ]; then
 	echo "review the arguments"
 fi
 
-for i in `seq 10 4 40`; do
+for i in `seq 32 4 40`; do
 	echo -n "$i..."
 	if [ ! -f $1/noc$i.topo0 ] || [ ! -f $1/noc$i.route0 ]; then
 		echo "$1/noc$i.topo0 OR $1/noc$1.route0 missing"
