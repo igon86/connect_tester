@@ -19,7 +19,7 @@ if [ ! -d $1 ] || [ $2 -le 0 ]; then
 	echo "review the arguments"
 fi
 
-for i in `seq 0 $2`; do
+for i in `seq 10 4 40`; do
 	echo -n "$i..."
 	if [ ! -f $1/noc$i.topo0 ] || [ ! -f $1/noc$i.route0 ]; then
 		echo "$1/noc$i.topo0 OR $1/noc$1.route0 missing"
