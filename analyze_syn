@@ -3,15 +3,17 @@
 # area anf frequency numbers
 if [ $# -ne 1 ]; then
 	echo "usage: $0 <synthesis folder>"
-	exit 
+	exit 1
 fi
 
 if ! [ -d $1 ]; then
    echo "$1 is not a directory"
+   exit 1
 fi
 
 if ! [ -d $1/output_files ]; then
    echo "$1 does not contain a output_files directory"
+   exit 1
 fi
 
 area_file="$1/output_files/mkNetworkSimple.fit.summary"

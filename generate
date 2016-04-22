@@ -26,8 +26,9 @@ if ! [ -f $DPU_CODE_FOLDER/noc/topology_generator.py ] || ! [ -f $2 ] || ! [ -f 
 	exit
 fi
 
-for i in `seq 0 20 200`; do
-
+#for i in `seq 0 20 2`; do
+interesting=" 2 4 6 8 15 30"
+for i in $interesting; do
 	new_folder="noc${1}_iter${i}"
 	echo -n "$new_folder...    "
 	mkdir -p $new_folder
